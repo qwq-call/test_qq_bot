@@ -16,16 +16,16 @@ def load_message():
         mylist.append(x.split(","))
 
     for a in mylist:
-        print(a)
+        # print(a)
         mydict[a[0]]=a[1]
-    print(mydict)
+    # print(mydict)
 
 
 
 def open_qq():
     # 打开QQ
     qq_location=gui.locateCenterOnScreen("qq.png")
-    print(qq_location)
+    # print(qq_location)
     if qq_location is not None:
         gui.click(qq_location.x,qq_location.y)
     else:
@@ -40,7 +40,7 @@ def wait_message():
         if message_location is not None:
             gui.moveTo(message_location.x,message_location.y)
             gui.doubleClick(message_location.x-50,message_location.y)
-            print(message_location)
+            # print(message_location)
             situation=1
             break
         else:
@@ -51,7 +51,7 @@ def wait_message():
 def send_message(text):
     while 0==0:
         send_location=gui.locateCenterOnScreen("send2.png",confidence=0.9)
-        print(send_location)
+        # print(send_location)
         if send_location is not None:
             gui.click(send_location.x,send_location.y-80)
             break
@@ -66,10 +66,7 @@ load_message()
 open_qq()
 wait_message()
 send_message('for_the_first')
-print("end")
 
-
-print(mydict)
 
 
 
